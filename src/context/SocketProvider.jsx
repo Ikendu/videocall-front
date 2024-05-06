@@ -8,10 +8,10 @@ export const useSocket = () => {
   const socket = useContext(SocketContext);
   return socket;
 };
-
+// "localhost:8000";
 function SocketProvider({ children }) {
   const socket = useMemo(
-    () => io(["localhost:8000", "https://videocall-api-1xxh.onrender.com"]),
+    () => io("https://videocall-api-1xxh.onrender.com"),
     []
   );
 
