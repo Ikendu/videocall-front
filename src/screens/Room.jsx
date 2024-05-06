@@ -8,6 +8,7 @@ function Room() {
   const [remoteSocketId, setRemoteSocketId] = useState(null);
   const [myStream, setMyStream] = useState();
   const [remoteStream, setRemoteStream] = useState();
+  const [muteVoice, setMuteVoice] = useState("mute");
 
   const handleUserJoined = useCallback(({ email, id }) => {
     console.log(`${email} joined the room`);
@@ -118,13 +119,7 @@ function Room() {
       {myStream && (
         <div>
           <h2>My Stream</h2>
-          <ReactPlayer
-            url={myStream}
-            width="220px"
-            height="130px"
-            playing
-            muted
-          />
+          <ReactPlayer url={myStream} width="220px" height="130px" playing />
         </div>
       )}
       {remoteStream && (
@@ -135,7 +130,6 @@ function Room() {
             width="700px"
             height="350px"
             playing
-            muted
           />
         </div>
       )}
