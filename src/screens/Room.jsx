@@ -114,7 +114,7 @@ function Room() {
       <h1>Chat Room</h1>
       <h3>{remoteSocketId ? "Connected" : "No one in the room"}</h3>
 
-      {myStream && <button onClick={sendStream}>Send Stream</button>}
+      {myStream && <button onClick={sendStream}>Anwser call</button>}
       {remoteSocketId && <button onClick={handleCallUser}>Call</button>}
       {myStream && (
         <div>
